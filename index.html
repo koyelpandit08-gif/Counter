@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title> Counter</title>
+  <style>
+    body {
+      background: linear-gradient(to right, #ffecd2, #fcb69f);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    h1 {
+      color: #333;
+      margin-bottom: 20px;
+      font-size: 3em;
+    }
+
+    #count {
+      font-size: 80px;
+      font-weight: bold;
+      color: #2c3e50;
+      margin: 20px;
+    }
+
+    .button-group {
+      display: flex;
+      gap: 20px;
+    }
+
+    button {
+      font-size: 24px;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    .inc {
+      background-color: #28a745;
+      color: white;
+    }
+
+    .dec {
+      background-color: #dc3545;
+      color: white;
+    }
+
+    .reset {
+      background-color: #007bff;
+      color: white;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+      opacity: 0.9;
+    }
+  </style>
+</head>
+<body>
+
+  <h1> Counter</h1>
+  <div id="count">0</div>
+
+  <div class="button-group">
+    <button class="dec" onclick="decrement()">−</button>
+    <button class="reset" onclick="reset()">🔁 Reset</button>
+    <button class="inc" onclick="increment()">+</button>
+  </div>
+
+  <script>
+    let count = 0;
+
+    function updateDisplay() {
+      document.getElementById('count').innerText = count;
+    }
+
+    function increment() {
+      count++;
+      updateDisplay();
+    }
+
+    function decrement() {
+      count--;
+      updateDisplay();
+    }
+
+    function reset() {
+      count = 0;
+      updateDisplay();
+    }
+  </script>
+
+</body>
+</html>
